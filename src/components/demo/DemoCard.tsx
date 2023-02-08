@@ -29,14 +29,15 @@ const StyledDivider = styled(Divider)({
 });
 
 interface IProps {
+  id: string;
   title: string;
   apiDesc: string;
   demoNode: ReactNode;
 }
 
-const DemoCard = ({ title, apiDesc, demoNode }: IProps) => {
+const DemoCard = ({ id, title, apiDesc, demoNode }: IProps) => {
   return (
-    <StyledCard>
+    <StyledCard id={id}>
       <StyledStack>
         <StyledTitleTypography variant="subtitle2">
           {title}

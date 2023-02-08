@@ -1,40 +1,70 @@
+import { Height } from "@mui/icons-material";
 import { Stack } from "@mui/material";
 import { styled } from "@mui/system";
-import { useState } from "react";
 import "./App.css";
-import { DemoCard } from "./components/demo";
+import { DemoCard, NavSidebar } from "./components/demo";
 import ApiMethod from "./constants/ApiMethod";
 
-const StyledFullDiv = styled("div")({
+const StyledFullStack = styled(Stack)({
   width: "100vw",
   height: "100vh",
+});
+
+const StyledLeftDiv = styled("div")({
+  flex: 1,
+  height: "100%",
   overflowY: "auto",
 });
 
-const StyledFullStack = styled(Stack)({
-  width: "100%",
-  marginTop: "20px",
-  marginBottom: "20px",
+const StyledFullLeftStack = styled(Stack)({
+  padding: "20px",
+});
+
+const StyledRightDiv = styled("div")({
+  flex: 3,
+  height: "100%",
+  overflowY: "auto",
+});
+
+const StyledFullRightStack = styled(Stack)({
+  padding: "20px",
 });
 
 function App() {
   return (
-    <StyledFullDiv className="App">
-      <StyledFullStack
-        direction="column"
-        spacing={2}
-        justifyContent="flex-start"
-        alignItems="center"
-      >
-        {ApiMethod.map((api) => (
-          <DemoCard
-            title={api.title}
-            apiDesc={api.apiDesc}
-            demoNode={api.node}
-          />
-        ))}
-      </StyledFullStack>
-    </StyledFullDiv>
+    <StyledFullStack
+      className="App"
+      direction="row"
+      justifyContent="center"
+      alignItems="flex-start"
+    >
+      <StyledLeftDiv>
+        <StyledFullLeftStack
+          direction="column"
+          justifyContent="flex-start"
+          alignItems="flex-end"
+        >
+          <NavSidebar items={ApiMethod} />
+        </StyledFullLeftStack>
+      </StyledLeftDiv>
+      <StyledRightDiv>
+        <StyledFullRightStack
+          direction="column"
+          spacing={2}
+          justifyContent="flex-start"
+          alignItems="flex-start"
+        >
+          {ApiMethod.map((method) => (
+            <DemoCard
+              id={method.id}
+              title={method.title}
+              apiDesc={method.apiDesc}
+              demoNode={method.node}
+            />
+          ))}
+        </StyledFullRightStack>
+      </StyledRightDiv>
+    </StyledFullStack>
   );
 }
 
