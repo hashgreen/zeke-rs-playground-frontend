@@ -1,7 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
+import {
+  DemoArrowButton,
+  DemoCardContent,
+  DemoInputTextField,
+  DemoOutputTextField,
+} from "../demo";
 
 const GetPuzzleHashFromAddress = () => {
-  return <div>GetPuzzleHashFromAddress</div>;
+  const [puzzleHash, setPuzzleHash] = useState<string>("");
+  const [address, setAddress] = useState<string>("");
+
+  const handlePuzzleHashChang = (
+    event: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>
+  ) => {
+    setPuzzleHash(event.target.value);
+  };
+
+  const handleTransferClick = () => {
+    // TODO:
+    setAddress(puzzleHash);
+  };
+
+  return (
+    <DemoCardContent>
+      <DemoInputTextField
+        label="Puzzle Hash"
+        value={puzzleHash}
+        placeholder="Puzzle Hash"
+        handleChange={handlePuzzleHashChang}
+      />
+      <DemoArrowButton handleClick={handleTransferClick} />
+      <DemoOutputTextField label="Address" value={address} />
+    </DemoCardContent>
+  );
 };
 
 export default GetPuzzleHashFromAddress;

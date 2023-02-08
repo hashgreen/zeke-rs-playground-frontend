@@ -1,5 +1,8 @@
 import { ReactNode } from "react";
-import { GetAddressFromPuzzleHash } from "../components/apiCard";
+import {
+  GetAddressFromPuzzleHash,
+  GetPuzzleHashFromAddress,
+} from "../components/apiCard";
 
 interface IApiMethodProps {
   title: string;
@@ -12,6 +15,11 @@ const ApiMethod: IApiMethodProps[] = [
     title: "Address to Puzzle Hash",
     apiDesc: "getAddressFromPuzzleHash(puzzleHash: string): hex string",
     node: <GetAddressFromPuzzleHash />,
+  },
+  {
+    title: "Puzzle Hash to Address",
+    apiDesc: "getPuzzleHashFromAddress(address: string): hex string",
+    node: <GetPuzzleHashFromAddress />,
   },
 ];
 

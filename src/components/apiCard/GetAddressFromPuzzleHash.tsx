@@ -1,29 +1,10 @@
-import ArrowDownwardIcon from "@mui/icons-material/ArrowDownward";
-import { FormControl, Input, InputLabel, Stack } from "@mui/material";
-import { styled } from "@mui/system";
 import React, { useState } from "react";
-
-const StyledFullStack = styled(Stack)({
-  width: "100%",
-});
-
-const StyledFullTextField = styled(FormControl)({
-  width: "100%",
-});
-
-const StyledButton = styled("div")({
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  width: "30px",
-  height: "30px",
-  borderRadius: "50%",
-  cursor: "pointer",
-  "&:hover": {
-    background: "#262E32",
-    color: "white",
-  },
-});
+import {
+  DemoArrowButton,
+  DemoCardContent,
+  DemoInputTextField,
+  DemoOutputTextField,
+} from "../demo";
 
 const GetAddressFromPuzzleHash = () => {
   const [address, setAddress] = useState<string>("");
@@ -37,36 +18,20 @@ const GetAddressFromPuzzleHash = () => {
 
   const handleTransferClick = () => {
     // TODO:
+    setPuzzleHash(address);
   };
 
   return (
-    <StyledFullStack
-      direction="column"
-      justifyContent="flex-start"
-      alignItems="center"
-      spacing={2}
-    >
-      <StyledFullTextField variant="standard">
-        <InputLabel htmlFor="component-simple" shrink>
-          Address
-        </InputLabel>
-        <Input
-          id="component-simple"
-          placeholder="address"
-          value={address}
-          onChange={handleAddressChang}
-        />
-      </StyledFullTextField>
-      <StyledButton onClick={handleTransferClick}>
-        <ArrowDownwardIcon />
-      </StyledButton>
-      <StyledFullTextField variant="standard">
-        <InputLabel htmlFor="component-simple" shrink>
-          Puzzle Hash
-        </InputLabel>
-        <Input id="component-simple" value={puzzleHash} disabled />
-      </StyledFullTextField>
-    </StyledFullStack>
+    <DemoCardContent>
+      <DemoInputTextField
+        label="Address"
+        value={address}
+        placeholder="Address"
+        handleChange={handleAddressChang}
+      />
+      <DemoArrowButton handleClick={handleTransferClick} />
+      <DemoOutputTextField label="Puzzle Hash" value={puzzleHash} />
+    </DemoCardContent>
   );
 };
 
