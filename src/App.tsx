@@ -21,7 +21,7 @@ const StyledFullLeftStack = styled(Stack)({
 });
 
 const StyledRightDiv = styled("div")({
-  flex: 3,
+  flex: 2,
   height: "100%",
   overflowY: "auto",
 });
