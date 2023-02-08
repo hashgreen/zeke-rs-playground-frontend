@@ -1,17 +1,17 @@
 import { ReactNode } from "react";
-import { GetAddressFromPuzzleHash } from "../components/demo";
+import { GetAddressFromPuzzleHash } from "../components/apiCard";
 
 interface IApiMethodProps {
   title: string;
   apiDesc: string;
-  node: () => JSX.Element;
+  node: ReactNode;
 }
 
 const ApiMethod: IApiMethodProps[] = [
   {
-    title: "getAddressFromPuzzleHash",
+    title: "Address to Puzzle Hash",
     apiDesc: "getAddressFromPuzzleHash(puzzleHash: string): hex string",
-    node: GetAddressFromPuzzleHash,
+    node: <GetAddressFromPuzzleHash />,
   },
 ];
 

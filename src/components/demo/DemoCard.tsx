@@ -19,6 +19,7 @@ const StyledApiDescTypography = styled(Typography)({
   padding: "5px 10px 5px 10px",
   background: "#262E32",
   color: "white",
+  fontWeight: "600",
   borderRadius: "3px",
   marginBottom: "30px",
 });

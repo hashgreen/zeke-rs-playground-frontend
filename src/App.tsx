@@ -30,7 +30,7 @@ function App() {
           <DemoCard
             title={api.title}
             apiDesc={api.apiDesc}
-            demoNode={<api.node />}
+            demoNode={api.node}
           />
         ))}
       </StyledFullStack>
