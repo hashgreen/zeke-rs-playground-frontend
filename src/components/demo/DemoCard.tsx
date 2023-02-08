@@ -20,7 +20,7 @@ const StyledApiDescTypography = styled(Typography)({
   background: "#262E32",
   color: "white",
   borderRadius: "3px",
-  marginBottom: "10px",
+  marginBottom: "30px",
 });
 const StyledDivider = styled(Divider)({
   marginTop: "5px",
