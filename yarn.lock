@@ -635,6 +635,11 @@
     magic-string "^0.27.0"
     react-refresh "^0.14.0"
 
+"@yutin1987/yuumi_rs@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@yutin1987/yuumi_rs/-/yuumi_rs-0.2.0.tgz#810a3cc30fc9eda9a4337b1a14e840fdb4297e75"
+  integrity sha512-xGRYKvSSu6OnFTLTexjwFf+gn1Ib8jjQwdlr1bswVD8ITNGgDpYZi+k7zzxyVeMbDdGvyBmLNDOdce/+EfH9JA==
+
 ansi-styles@^3.2.1:
   version "3.2.1"
   resolved "https://registry.npmjs.org/ansi-styles/-/ansi-styles-3.2.1.tgz"
