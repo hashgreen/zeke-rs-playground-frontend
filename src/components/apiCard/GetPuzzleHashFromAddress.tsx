@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import * as rs from "@yutin1987/yuumi_rs";
 import {
   DemoArrowButton,
   DemoCardContent,
@@ -17,8 +18,7 @@ const GetPuzzleHashFromAddress = () => {
   };
 
   const handleTransferClick = () => {
-    // TODO:
-    setAddress(puzzleHash);
+    setAddress(rs.getAddressFromPuzzleHash(puzzleHash));
   };
 
   return (
