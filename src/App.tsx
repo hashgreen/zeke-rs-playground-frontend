@@ -4,6 +4,7 @@ import { styled } from "@mui/system";
 import "./App.css";
 import { DemoCard, NavSidebar } from "./components/demo";
 import ApiMethod from "./constants/ApiMethod";
+import init from "@yutin1987/yuumi_rs";
 
 const StyledFullStack = styled(Stack)({
   width: "100vw",
@@ -31,6 +32,8 @@ const StyledFullRightStack = styled(Stack)({
 });
 
 function App() {
+  init().then();
+
   return (
     <StyledFullStack
       className="App"
