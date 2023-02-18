@@ -1,7 +1,7 @@
-# yuumi-rs-playground-frontend
+# zeke-rs-playground-frontend
 
 ## RELATED REPO
-* [Yuumi Rust](https://github.com/hashgreen/yuumi-rs-playground)
+* [Zeke Rust](https://github.com/hashgreen/zeke-rs-playground)
 
 ## LIBRARY
 * [Yummi Rust]()
