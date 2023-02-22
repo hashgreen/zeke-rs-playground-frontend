@@ -1,3 +1,4 @@
+import { WalletList } from "@/components/wallet";
 import { IApiMethodSectionProps } from "@/constants/ApiMethod";
 import { Stack, Typography } from "@mui/material";
 import { styled } from "@mui/system";
@@ -63,6 +64,7 @@ interface IProps {
 const NavSidebar = ({ items }: IProps) => {
   return (
     <StyledContent>
+      <WalletList />
       {items.map((item) => (
         <NavSidebarSection
           key={item.id}
