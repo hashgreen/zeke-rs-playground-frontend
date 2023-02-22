@@ -1,19 +1,29 @@
+import { IApiMethodSectionProps } from "@/constants/ApiMethod";
 import { Stack, Typography } from "@mui/material";
 import { styled } from "@mui/system";
 import React from "react";
 
 const StyledContent = styled(Stack)({
-  background: "white",
-  padding: "10px",
-  borderRadius: "5px",
+  padding: "20px",
 });
+
+const StyledSection = styled(Stack)({});
+const StyledSectionContent = styled(Stack)({
+  paddingLeft: "5px",
+});
+
+const StyledTitleTypography = styled(Typography)({
+  color: "black",
+});
+
 const StyledLink = styled("a")({
   textDecoration: "none",
   "&:visited": {
     color: "inherit",
   },
 });
-const StyledTypography = styled(Typography)({
+
+const StyledMethodTypography = styled(Typography)({
   color: "#0d70c1",
   "&:hover": {
     color: "#15d38d",
@@ -28,20 +38,38 @@ interface IItemProps {
 const NavSidebarItem = ({ id, title }: IItemProps) => {
   return (
     <StyledLink href={`#${id}`}>
-      <StyledTypography variant="caption">{title}</StyledTypography>
+      <StyledMethodTypography variant="caption">{title}</StyledMethodTypography>
     </StyledLink>
   );
 };
 
+const NavSidebarSection = ({ title, methods }: IApiMethodSectionProps) => {
+  return (
+    <StyledSection spacing={1}>
+      <StyledTitleTypography>{title}</StyledTitleTypography>
+      <StyledSectionContent>
+        {methods.map((method) => (
+          <NavSidebarItem key={method.id} id={method.id} title={method.title} />
+        ))}
+      </StyledSectionContent>
+    </StyledSection>
+  );
+};
+
 interface IProps {
-  items: IItemProps[];
+  items: IApiMethodSectionProps[];
 }
 
 const NavSidebar = ({ items }: IProps) => {
   return (
     <StyledContent>
       {items.map((item) => (
-        <NavSidebarItem id={item.id} title={item.title} />
+        <NavSidebarSection
+          key={item.id}
+          id={item.id}
+          title={item.title}
+          methods={item.methods}
+        />
       ))}
     </StyledContent>
   );

@@ -1,10 +1,10 @@
 import { Height } from "@mui/icons-material";
 import { Stack } from "@mui/material";
 import { styled } from "@mui/system";
+import init from "@yutin1987/yuumi_rs";
 import "./App.css";
 import { DemoCard, NavSidebar } from "./components/demo";
 import ApiMethod from "./constants/ApiMethod";
-import init from "@yutin1987/yuumi_rs";
 
 const StyledFullStack = styled(Stack)({
   width: "100vw",
@@ -12,17 +12,14 @@ const StyledFullStack = styled(Stack)({
 });
 
 const StyledLeftDiv = styled("div")({
-  flex: 1,
+  width: "200px",
   height: "100%",
   overflowY: "auto",
-});
-
-const StyledFullLeftStack = styled(Stack)({
-  padding: "20px",
+  background: "#F5F5F5",
 });
 
 const StyledRightDiv = styled("div")({
-  flex: 2,
+  flex: 1,
   height: "100%",
   overflowY: "auto",
 });
@@ -42,29 +39,25 @@ function App() {
       alignItems="flex-start"
     >
       <StyledLeftDiv>
-        <StyledFullLeftStack
-          direction="column"
-          justifyContent="flex-start"
-          alignItems="flex-end"
-        >
-          <NavSidebar items={ApiMethod} />
-        </StyledFullLeftStack>
+        <NavSidebar items={ApiMethod} />
       </StyledLeftDiv>
       <StyledRightDiv>
         <StyledFullRightStack
           direction="column"
           spacing={2}
           justifyContent="flex-start"
-          alignItems="flex-start"
+          alignItems="center"
         >
-          {ApiMethod.map((method) => (
-            <DemoCard
-              id={method.id}
-              title={method.title}
-              apiDesc={method.apiDesc}
-              demoNode={method.node}
-            />
-          ))}
+          {ApiMethod.map((methodSection) =>
+            methodSection.methods.map((method) => (
+              <DemoCard
+                id={method.id}
+                title={method.title}
+                apiDesc={method.apiDesc}
+                demoNode={method.node}
+              />
+            ))
+          )}
         </StyledFullRightStack>
       </StyledRightDiv>
     </StyledFullStack>

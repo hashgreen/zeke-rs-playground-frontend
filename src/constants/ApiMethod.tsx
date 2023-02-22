@@ -11,18 +11,30 @@ interface IApiMethodProps {
   node: ReactNode;
 }
 
-const ApiMethod: IApiMethodProps[] = [
+export interface IApiMethodSectionProps {
+  id: string;
+  title: string;
+  methods: IApiMethodProps[];
+}
+
+const ApiMethod: IApiMethodSectionProps[] = [
   {
-    id: "addressToPuzzle",
-    title: "Address to Puzzle Hash",
-    apiDesc: "getPuzzleHashFromAddress(address: string): hex string",
-    node: <GetAddressFromPuzzleHash />,
-  },
-  {
-    id: "puzzleToAddress",
-    title: "Puzzle Hash to Address",
-    apiDesc: "getAddressFromPuzzleHash(puzzleHash: string): hex string",
-    node: <GetPuzzleHashFromAddress />,
+    id: "basic",
+    title: "Address",
+    methods: [
+      {
+        id: "addressToPuzzle",
+        title: "Address to Puzzle Hash",
+        apiDesc: "getPuzzleHashFromAddress(address: string): hex string",
+        node: <GetAddressFromPuzzleHash />,
+      },
+      {
+        id: "puzzleToAddress",
+        title: "Puzzle Hash to Address",
+        apiDesc: "getAddressFromPuzzleHash(puzzleHash: string): hex string",
+        node: <GetPuzzleHashFromAddress />,
+      },
+    ],
   },
 ];
 
