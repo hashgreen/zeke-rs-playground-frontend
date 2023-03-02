@@ -5,7 +5,7 @@ import wasm from "vite-plugin-wasm";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "/",
+  base: "/zeke-rs-playground-frontend/",
   plugins: [wasm(), react()],
   resolve: {
     alias: {
