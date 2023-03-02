@@ -42,7 +42,7 @@ const Hoogii = () => {
         Hoogii
       </StyledNameTypography>
       <StyledContentTypography color="inherit" variant="caption">
-        {isConnected ? shortAddress : "connect"}
+        {isConnected ? shortAddress : ""}
       </StyledContentTypography>
     </StyledStack>
   );

@@ -2,6 +2,7 @@ import { ReactNode } from "react";
 import {
   GetAddressFromPuzzleHash,
   GetPuzzleHashFromAddress,
+  SendTx,
 } from "../components/apiCard";
 
 interface IApiMethodProps {
@@ -20,7 +21,7 @@ export interface IApiMethodSectionProps {
 const ApiMethod: IApiMethodSectionProps[] = [
   {
     id: "basic",
-    title: "Address",
+    title: "Methods",
     methods: [
       {
         id: "addressToPuzzle",
@@ -33,6 +34,12 @@ const ApiMethod: IApiMethodSectionProps[] = [
         title: "Puzzle Hash to Address",
         apiDesc: "getAddressFromPuzzleHash(puzzleHash: string): hex string",
         node: <GetPuzzleHashFromAddress />,
+      },
+      {
+        id: "sendTx",
+        title: "Send Tx",
+        apiDesc: "sendTx(puzzleHash: string): hex string",
+        node: <SendTx />,
       },
     ],
   },
